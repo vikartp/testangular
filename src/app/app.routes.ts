@@ -7,6 +7,8 @@ import { SignalTest } from './signalTest/signalTest';
 import { LifeCycleHooksParent } from './lifecycleHooks/lifecycleHooks';
 import { RxjsTest } from './rxjs-test/rxjs-test';
 import { DynamicComponent } from './dynamic-component/dynamic-component';
+import { InjectionTokenComp } from './injection-token/injection-token';
+import { JSON_PLACEHOLDER_URL } from './injection-token/inject.interface';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -16,5 +18,13 @@ export const routes: Routes = [
   { path: 'lifecycle', component: LifeCycleHooksParent },
   { path: 'rxjs', component: RxjsTest },
   { path: 'dynamic', component: DynamicComponent },
+  { path: 'injectionToken', component: InjectionTokenComp, 
+    providers: [
+      {
+        provide: JSON_PLACEHOLDER_URL,
+        useValue: 'https://jsonplaceholder.typicode.com/posts',
+      },
+    ]
+   },
   { path: '**', redirectTo: '' } // Fallback route (optional)
 ];
