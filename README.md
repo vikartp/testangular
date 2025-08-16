@@ -1,0 +1,4 @@
+- This is a latest tutorial for learning Angular 20.
+- Each concept has been explained using a separate component.
+- To make best use of it, please go to the component and read the codebase.
+- To run this project, simply run 'ng serve'
